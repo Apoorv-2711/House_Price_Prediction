@@ -1,229 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>House Price Prediction</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="{{ url_for('static', filename='src/input.css') }}" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#">HOME</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">MODELS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
-                    </ul>
-                </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>House Price Prediction</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url_for('static', filename='src/input.css') }}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">HOME</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link  px-0 px-lg-3 rounded"
+                            href="#portfolio">MODELS</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link  px-0 px-lg-3 rounded" href="#about">About</a>
+                    </li>
+                    <!-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> -->
+                </ul>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{{ url_for('static', filename='assets/img/avataaars.svg') }}" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5 rounded-circle" src="{{ url_for('static', filename='assets/img/house2.gif') }}"
+                alt="..." />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">House Price Prediction</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">MODELS</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/linear.png') }}" alt="..." />
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Predict the price of your future house using our ML model. </p>
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+    <section class="page-section  portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">MODELS</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <a class="navbar-brand" href="linear_regression.html">
-                            <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3" style="font-size: large;">linear regression model <i class="fa-solid fa-arrow-right"></i></h6>
-                        </a>
-                        
+                        <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/linear.png') }}"
+                            alt="..." />
                     </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/lasso.png') }}" alt="..." />
+                    <a class="navbar-brand" href="linear_regression.html">
+                        <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3"
+                            style="font-size: large;">linear regression model <i class="fa-solid fa-arrow-right"></i>
+                        </h6>
+                    </a>
+
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <a class="navbar-brand" href="lasso.html">
-                            <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3" style="font-size: large;">lasso model <i class="fa-solid fa-arrow-right"></i></h6>
-                        </a>
+                        <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/lasso.png') }}"
+                            alt="..." />
                     </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/ridge.jpg') }}" alt="..." />
+                    <a class="navbar-brand" href="lasso.html">
+                        <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3"
+                            style="font-size: large;">lasso model <i class="fa-solid fa-arrow-right"></i></h6>
+                    </a>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
                         </div>
-                        <a class="navbar-brand" href="ridge.html">
-                            <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3" style="font-size: large;">ridge model <i class="fa-solid fa-arrow-right"></i></h6>
-                        </a>
+                        <img class="img-fluid" src="{{ url_for('static', filename='assets/img/portfolio/ridge.jpg') }}"
+                            alt="..." />
                     </div>
+                    <a class="navbar-brand" href="ridge.html">
+                        <h6 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-3"
+                            style="font-size: large;">ridge model <i class="fa-solid fa-arrow-right"></i></h6>
+                    </a>
                 </div>
             </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+        </div>
+    </section>
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- About Section Content-->
+            <div class="row">
+                <div class="col-lg-4 ms-auto">
+                    <p class="lead">House price prediction using machine learning models is a technique that can be used to accurately price properties based on various factors. Models such as linear regression, lasso regression, and ridge regression can be used to predict house prices based on historical data.</p>
                 </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                <div class="col-lg-4 me-auto">
+                    <p class="lead">These models use different techniques to find the best fit between the input variables and the output variable, which is the predicted house price. Accurately predicting house prices can help to inform pricing decisions and provide valuable insights for buyers and sellers in the real estate industry.</p>
                 </div>
             </div>
-        </section>
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">LINEAR REGRESSION MODEL</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ url_for('static', filename='assets/img/portfolio/linear.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Linear regression is commonly used in house prediction to determine the relationship between various factors such as the size of the house, location, number of bedrooms, and bathrooms, and the price of the house. By analyzing these factors, a linear equation can be derived to predict the price of a house based on its characteristics. This information can be used by real estate agents and home buyers to make informed decisions about buying and selling houses.</p>
-                                    <a class="navbar-brand" href="linear_regression.html">
-                                        <button class="btn btn-primary">
-                                            Go to model
-                                        </button>
-                                    </a>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="d-flex row justify-content-center">
+                <!-- Footer About Text-->
+                <h4 class="text-uppercase mb-2">Made By :</h4>
+                <div class="col-lg-12 d-flex row ">
+                    <header class=" text-white text-center">
+                        <div class="d-flex flex-row  justify-content-between align-items-center ">
+                            <div>
+                                <!-- Masthead Avatar Image-->
+                                <img class="masthead-avatar mb-2 col-3 col-sm-3 rounded-circle "
+                                    src="{{ url_for('static', filename='assets/img/apoorv.jpg') }}" alt="..." />
+                                <!-- Masthead Heading-->
+                                <h6 class="masthead-subheading font-weight-bold mb-0 text-uppercase">Apoorv Jain
+                                </h6>
+                            </div>
+                            <div>
+                                <!-- Masthead Avatar Image-->
+                                <img class="masthead-avatar mb-2 col-3 col-sm-3 rounded-circle"
+                                    src="{{ url_for('static', filename='assets/img/vikash.jpg') }}" alt="..." />
+                                <!-- Masthead Heading-->
+                                <h6 class="masthead-subheading font-weight-bold mb-0 text-uppercase">Vikash Kumar
+                                </h6>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">LINEAR REGRESSION
+                                    MODEL</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                    src="{{ url_for('static', filename='assets/img/portfolio/linear.png') }}"
+                                    alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Linear regression is commonly used in house prediction to determine the
+                                    relationship between various factors such as the size of the house, location, number
+                                    of bedrooms, and bathrooms, and the price of the house. By analyzing these factors,
+                                    a linear equation can be derived to predict the price of a house based on its
+                                    characteristics. This information can be used by real estate agents and home buyers
+                                    to make informed decisions about buying and selling houses.</p>
+                                <a class="navbar-brand" href="linear_regression.html">
+                                    <button class="btn btn-primary">
+                                        Go to model
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">LASSO MODEL</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ url_for('static', filename='assets/img/portfolio/lasso.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lasso (Least Absolute Shrinkage and Selection Operator) is a linear regression model used in house prediction to reduce the complexity of the model by shrinking the coefficients of irrelevant features to zero. This helps in avoiding overfitting and selecting only the most important features to predict the price of a house. Lasso is useful when dealing with a large number of variables or when there is multicollinearity among the predictors.</p>
-                                    <a class="navbar-brand" href="lasso.html">
-                                        <button class="btn btn-primary">
-                                            Go to model
-                                        </button>
-                                    </a>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">LASSO MODEL</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                    src="{{ url_for('static', filename='assets/img/portfolio/lasso.png') }}"
+                                    alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Lasso (Least Absolute Shrinkage and Selection Operator) is a linear
+                                    regression model used in house prediction to reduce the complexity of the model by
+                                    shrinking the coefficients of irrelevant features to zero. This helps in avoiding
+                                    overfitting and selecting only the most important features to predict the price of a
+                                    house. Lasso is useful when dealing with a large number of variables or when there
+                                    is multicollinearity among the predictors.</p>
+                                <a class="navbar-brand" href="lasso.html">
+                                    <button class="btn btn-primary">
+                                        Go to model
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RIDGE MODEL</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ url_for('static', filename='assets/img/portfolio/ridge.jpg') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Ridge regression is a linear regression model used in house prediction that uses L2 regularization to add a penalty term to the sum of squared coefficients. This helps in reducing the impact of multicollinearity and overfitting by shrinking the coefficients of less important features towards zero, while maintaining the predictive power of the model. Ridge regression is particularly useful when dealing with high-dimensional data and when there is multicollinearity among the predictors.</p>
-                                    <a class="navbar-brand" href="ridge.html">
-                                        <button class="btn btn-primary">
-                                            Go to model
-                                        </button>
-                                    </a>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RIDGE MODEL</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                    src="{{ url_for('static', filename='assets/img/portfolio/ridge.jpg') }}"
+                                    alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4">Ridge regression is a linear regression model used in house prediction
+                                    that uses L2 regularization to add a penalty term to the sum of squared
+                                    coefficients. This helps in reducing the impact of multicollinearity and overfitting
+                                    by shrinking the coefficients of less important features towards zero, while
+                                    maintaining the predictive power of the model. Ridge regression is particularly
+                                    useful when dealing with high-dimensional data and when there is multicollinearity
+                                    among the predictors.</p>
+                                <a class="navbar-brand" href="ridge.html">
+                                    <button class="btn btn-primary">
+                                        Go to model
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
 </html>
